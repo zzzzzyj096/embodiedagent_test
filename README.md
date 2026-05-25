@@ -13,6 +13,7 @@
 | ![sofa](result/navigation_沙发.gif) | ![chair](result/navigation_椅子.gif) |
 
 更多导航与系统探索过程见 `result/`、`pre_explore.gif`、`systematic_explore.gif`。
+在线试用：<https://u630485-b57z-a719a03c.bjb2.seetacloud.com:8443>
 
 ---
 
