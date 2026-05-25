@@ -6,6 +6,16 @@
 
 ---
 
+## 演示
+
+| 沙发 (sofa) | 椅子 (chair) |
+|:---:|:---:|
+| ![sofa](result/navigation_沙发.gif) | ![chair](result/navigation_椅子.gif) |
+
+更多导航与系统探索过程见 `result/`、`pre_explore.gif`、`systematic_explore.gif`。
+
+---
+
 ## 1. 任务定义
 
 | 项目 | 说明 |
@@ -176,7 +186,15 @@ embodied_agent_top_debug.py
 embodied_agent_2.py
 llm_judge.py
 semantic_topo_map.json
-web/  start_web.py
+result/                         # 导航演示 GIF
+web/
+├── app.py                      # FastAPI 后端
+├── static/                     # 前端 (index.html / app.js / style.css)
+└── script/
+    ├── start_web.py            # Web 启动入口
+    ├── run_web.sh
+    ├── check_web_deps.py
+    └── requirements-web.txt
 ```
 
 依赖：HM3D、GroundingDINO 权重、habitat conda 环境；场景与权重路径见各脚本配置项。
