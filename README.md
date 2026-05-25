@@ -24,7 +24,7 @@
 | 指令 | 中文经 DashScope 解析为五类目标类别 |
 | OVD 文本提示 | sofa / bed / chair seat / door / table |
 | 成功判据 | 无 GT 位姿；Stage3 分级到达 + `stage3_confirm_success` 闸门；结合 GIF 与 navigation log 人工验证 |
-| 主实现 | `embodied_agent_top_debug.py`（调试）；|
+| 主实现 | `embodied_agent_top_debug.py`|
 | 基线 | `embodied_agent_2.py`（ShortestPath + 任务内 anchor 估计，无 SemanticView 库） |
 
 ---
