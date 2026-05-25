@@ -7,7 +7,7 @@
 用法:
   conda activate habitat
   cd /autodl-tmp
-  python start_web.py
+  python web/script/start_web.py
 """
 from __future__ import annotations
 
@@ -101,7 +101,8 @@ def pick_port(start: int) -> int:
 
 
 def main() -> None:
-    root = os.path.dirname(os.path.abspath(__file__))
+    here = os.path.dirname(os.path.abspath(__file__))
+    root = os.path.abspath(os.path.join(here, "..", ".."))
     os.chdir(root)
     py, ok, err = resolve_python()
     port = pick_port(DEFAULT_PORT)
