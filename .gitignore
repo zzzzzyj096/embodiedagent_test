@@ -1,0 +1,47 @@
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# ===== IDE =====
+.vscode/
+.idea/
+
+# ===== 第三方代码 / 数据集（体积过大，不入库） =====
+GroundingDINO/
+GroundingDINO.zip
+hm3d/
+habitat_data/
+
+# ===== 运行产物 / 中间结果 =====
+*.log
+*.gif
+systematic_explore_log_*.txt
+navigation_log_*.txt
+result_copyver/
+result/
+runs/
+outputs/
+checkpoints/
+*.pth
+*.bin
+*.onnx
+
+# ===== 大型 JSON / 缓存（按需调整） =====
+# 如果要保留 semantic_topo_map.json，注释掉下一行
+semantic_topo_map.json
+
+# ===== 临时与系统 =====
+.DS_Store
+Thumbs.db
+*.swp
+_recovered_from_pyc.py
+
+# ===== 密钥 / 环境变量 =====
+.env
+.env.*
+*.key
+secrets.*

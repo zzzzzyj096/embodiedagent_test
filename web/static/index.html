@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>具身导航 Agent</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="layout">
+    <header class="header">
+      <div class="brand">
+        <span class="logo">🤖</span>
+        <div>
+          <h1>室内具身导航</h1>
+          <p class="subtitle">预置场景与语义地图 · 输入目标即可出发</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <span id="session-badge" class="badge">正在准备…</span>
+        <!-- 管理员选项（默认隐藏，WEB_USER_MODE=0 时显示） -->
+        <div id="admin-bar" class="admin-bar" hidden>
+          <label class="pipeline-label">
+            方案
+            <select id="pipeline">
+              <option value="debug" selected>语义拓扑 Debug</option>
+              <option value="top">语义拓扑 Final</option>
+              <option value="v2">PathFinder</option>
+            </select>
+          </label>
+          <button type="button" id="btn-init" class="btn secondary">重新加载模型</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="chat-panel">
+        <div id="messages" class="messages" aria-live="polite"></div>
+        <div class="quick-actions">
+          <span class="hint">选择目标：</span>
+          <button type="button" class="chip" data-msg="沙发">沙发</button>
+          <button type="button" class="chip" data-msg="椅子">椅子</button>
+          <span class="chip-wrap chip-wrap--debug">
+            <button type="button" class="chip chip--debug" data-msg="床" disabled>床</button>
+            <span class="chip-tag">debug中</span>
+          </span>
+          <span class="chip-wrap chip-wrap--debug">
+            <button type="button" class="chip chip--debug" data-msg="门" disabled>门</button>
+            <span class="chip-tag">debug中</span>
+          </span>
+          <span class="chip-wrap chip-wrap--debug">
+            <button type="button" class="chip chip--debug" data-msg="桌子" disabled>桌子</button>
+            <span class="chip-tag">debug中</span>
+          </span>
+        </div>
+        <form id="chat-form" class="composer">
+          <textarea
+            id="input"
+            rows="2"
+            placeholder="输入目标，如：沙发、请到椅子旁边…"
+            autocomplete="off"
+          ></textarea>
+          <button type="submit" id="btn-send" class="btn primary" disabled>出发</button>
+        </form>
+      </section>
+
+      <aside class="side-panel">
+        <div class="card">
+          <h2>任务状态</h2>
+          <div id="job-status" class="job-status idle">系统加载中</div>
+          <div id="job-meta" class="job-meta"></div>
+        </div>
+        <div class="card">
+          <h2>运行日志</h2>
+          <pre id="logs" class="logs">正在加载场景、检测模型与语义地图…</pre>
+        </div>
+        <div class="card" id="gif-card" hidden>
+          <h2>导航回放</h2>
+          <img id="gif-preview" alt="导航 GIF" />
+          <a id="gif-link" href="#" target="_blank" rel="noopener">在新标签打开</a>
+        </div>
+      </aside>
+    </main>
+  </div>
+  <script src="/static/app.js"></script>
+</body>
+</html>
