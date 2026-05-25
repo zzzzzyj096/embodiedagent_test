@@ -16,7 +16,7 @@ import socket
 import subprocess
 import sys
 
-DEFAULT_PORT = int(os.environ.get("WEB_PORT", "8765"))
+DEFAULT_PORT = int(os.environ.get("WEB_PORT", "6006"))
 HOST = "0.0.0.0"
 _HABITAT_IMPORT_TIMEOUT = int(os.environ.get("HABITAT_IMPORT_TIMEOUT", "180"))
 
